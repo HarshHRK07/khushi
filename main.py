@@ -9,7 +9,7 @@ TOKEN = '7047747041:AAEILQG2DpYfxUJNyEvit9lLFOCyibA6_OM'
 bot = telebot.TeleBot(TOKEN)
 
 # OpenAI API Key
-openai.api_key = 'YOUR_OPENAI_API_KEY'
+openai.api_key = 'HRK-API-GPT3.5-EY3UO9PJ1R0'
 openai.base_url = "https://green-devil.tech/v1/"
 
 # List to store previous chats
