@@ -5,7 +5,7 @@ from keep_alive import keep_alive
 keep_alive()
 
 # Telegram Bot Token
-TOKEN = '7047747041:AAEILQG2DpYfxUJNyEvit9lLFOCyibA6_OM'
+TOKEN = '7195510626:AAH4aQbkfapXEMLmMIs6kkzB203ApwJeOZc'
 bot = telebot.TeleBot(TOKEN)
 
 # OpenAI API Key
