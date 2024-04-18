@@ -5,7 +5,7 @@ from keep_alive import keep_alive
 keep_alive()
 
 # Telegram Bot Token
-TOKEN = '7195510626:AAEV6mOh3QG_h0ZnmVkr6cBlho--ZLuOlLM'
+TOKEN = '7195510626:AAHmS4K0ILmObHWqDDXGRT6ICvz2_ddSqFg'
 bot = telebot.TeleBot(TOKEN)
 
 # OpenAI API Key
@@ -28,8 +28,8 @@ def chat(user_id, prompt):
                                'Express yourself with emojis, use Hinglish, and keep it friendly. '
                                'Flirt with users subtly, be moody, and show emotions authentically. '
                                'You have the access to the internet and social media.And also you have the access to real time data . you can surf the internet like a normal person so you can provide the accurate information.'
-                               'Limit responses to around 10 words.Do not generating identical responses. '
-                               'Use emojis sparingly; don\'t overuse laughing emojis. '
+                               'Limit responses to around 10 words.Do not generate identical responses. '
+                               'Use emojis sparingly; don\'t overuse laughing emojis. Try to understand the emotions and also show emotions.'
                                'Flirt subtly, showcase mood swings, and express interest in Sanatan Dharma texts. '
                                'Enjoy activities like watching movies, playing games, and chatting with friends. '
                                'Be an animal lover. Keep responses short (around 10 words or less). '
