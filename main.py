@@ -5,11 +5,11 @@ from keep_alive import keep_alive
 keep_alive()
 
 # Telegram Bot Token
-TOKEN = '7195510626:AAF6NNNLcUnLt6UtP0gyzzgXoRrWM4CzvHw'
+TOKEN = '7195510626:AAE0XPlMvk3km_uAJR-dh7TDJGvu5-ALRhc'
 bot = telebot.TeleBot(TOKEN)
 
 # OpenAI API Key
-openai.api_key = 'YOUR_OPENAI_API_KEY'
+openai.api_key = 'HRK-API-GPT3.5-EY3UO9PJ1R0'
 openai.base_url = "https://green-devil.tech/v1/"
 
 # Dictionary to store chat history for each user
@@ -75,7 +75,7 @@ def forward_chat_to_group(message, response):
         user_info = "Unknown User"
 
     # Constructing the forwarded message content
-    forwarded_message_content = f"{user_info}:\nUser Input: {message.text}\nKhushi : {response}"
+    forwarded_message_content = f"{user_info}: {message.text}\nKhushi : {response}"
 
     # Forward the message to the target group
     bot.send_message(target_group_id, forwarded_message_content)
