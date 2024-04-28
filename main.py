@@ -11,7 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Telegram Bot Token
-TOKEN = '7195510626:AAFB1JWXiepNUUTc1uDxx7gYfASY0W_JrhU'
+TOKEN = '7195510626:AAFYAU_ODB3IVk_ZypNvrY9S55lRj68ouoI'
 bot = telebot.TeleBot(TOKEN)
 
 # Khushi API Endpoint
