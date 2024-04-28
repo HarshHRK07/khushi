@@ -11,7 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Telegram Bot Token
-TOKEN = '7195510626:AAFYAU_ODB3IVk_ZypNvrY9S55lRj68ouoI'
+TOKEN = '7195510626:AAGrqIW-NmJ6LhN3I-nJu5uBbINmfkY2noE'
 bot = telebot.TeleBot(TOKEN)
 
 # Khushi API Endpoint
@@ -21,7 +21,7 @@ API_URL = "https://khushiapi.replit.app/demo"
 user_chat_history = {}
 
 # Maximum number of chats to remember for each user
-MAX_HISTORY_LENGTH = 30
+MAX_HISTORY_LENGTH = 10
 
 # Function to interact with Khushi API
 def chat(user_id, prompt):
