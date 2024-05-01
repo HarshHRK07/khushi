@@ -5,12 +5,12 @@ from keep_alive import keep_alive
 keep_alive()
 
 # Telegram Bot Token
-TOKEN = '7195510626:AAGqfnbwkxnXD_H7IP_tvl36FGAfW0yC3Ow'
+TOKEN = '7195510626:AAFXATou3_r_7T2Zzsb7UZanAqIR4ELb6cg'
 bot = telebot.TeleBot(TOKEN)
 
 # OpenAI API Key
-openai.api_key = 'HRK-API-GPT3.5-EY3UO9PJ1R0'
-openai.base_url = "https://green-devil.tech/v1/"
+openai.api_key = 'pk-qxXKbiTMJwIPdSvpyjGSVcFIYILaiXKyYeggLRofftDOoxOo'
+openai.base_url = "https://api.pawan.krd/gpt-3.5-unfiltered/v1"
 
 # Dictionary to store chat history for each user
 user_chat_history = {}
