@@ -1,3 +1,2 @@
-Flask
-telebot
-openai
+pyTelegramBotAPI
+openai==0.28
