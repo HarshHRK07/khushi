@@ -5,7 +5,7 @@ from time import sleep
 import os
 
 # Set your tokens and owner ID directly
-TELEGRAM_BOT_TOKEN = '7195510626:AAEESkdWYtD8sG-qKgHW6Sod0AsdS3E4zmY'
+TELEGRAM_BOT_TOKEN = '7195510626:AAGq0uF1p2vMBIUixEswgcpmfHdf6Fn2OkY'
 OPENAI_API_KEY = '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'
 BOT_OWNER_ID = 6460703454  # Replace with the actual owner's user ID
 
