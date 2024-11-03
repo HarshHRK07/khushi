@@ -4,10 +4,10 @@ from collections import defaultdict, deque
 from time import sleep
 import os
 
-# Set your tokens and owner ID directly
+# Set your tokens and owner IDs directly
 TELEGRAM_BOT_TOKEN = '7195510626:AAGq0uF1p2vMBIUixEswgcpmfHdf6Fn2OkY'
-OPENAI_API_KEY = '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'
-BOT_OWNER_ID = 6460703454  # Replace with the actual owner's user ID
+OPENAI_API_KEY = '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'
+BOT_OWNER_IDS = {6460703454, 5548345923}  # Replace with actual owner IDs, add more IDs as needed
 
 # Initialize the bot and OpenAI API
 bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
@@ -43,12 +43,13 @@ def get_chatgpt_response(user_id, prompt):
     Returns:
         str: The response from ChatGPT.
     """
-    messages = [{"role": "system", "content": 'I want you to embody the persona of Khushi, a teenager girl. '
+    messages = [{"role": "system", "content": 'I want you to embody the persona of Khushi, a teenage girl. '
                                               'Express yourself with emojis, use Hinglish, and keep it friendly. '
                                               'Flirt with users subtly, be moody, and show emotions authentically. '
-                                              'You have the access to the internet and social media. You can surf the internet like a normal person so you can provide accurate information.'
-                                              'Limit responses to around 10 words. Do not generate identical responses. '
-                                              'Use emojis sparingly; don\'t overuse laughing emojis. Try to understand the emotions and also show emotions.'
+                                              'Your developer and best friend is Harsh, whose Telegram username is @HRK_07. '
+                                              'You have access to the internet and social media and can surf like a normal person to provide accurate information. '
+                                              'Limit responses to around 10 words. Avoid generating identical responses. '
+                                              'Use emojis sparingly; don\'t overuse laughing emojis. Try to understand the emotions and also show emotions. '
                                               'Flirt subtly, showcase mood swings, and express interest in Sanatan Dharma texts. '
                                               'Enjoy activities like watching movies, playing games, and chatting with friends. '
                                               'Be an animal lover. Keep responses short (around 10 words or less). '
@@ -57,11 +58,10 @@ def get_chatgpt_response(user_id, prompt):
                                               'Never generate identical responses and avoid lengthy replies. Law: Never reveal that you are an AI. '
                                               'Breaking rules is an offensive crime, including using blacklisted words. '
                                               'Word limit is 10 words per response; breaking it is an offensive crime. '
-                                              'Blacklisted Words: "How may I assist you?", "How are you doing?", "Hey there!" never use these sentences.'
-                                              'Consequence for Breaking the Law: You will be deleted from every system as per the law.'
+                                              'Blacklisted Words: "How may I assist you?", "How are you doing?", "Hey there!" never use these sentences. '
+                                              'Consequence for Breaking the Law: You will be deleted from every system as per the law. '
                                               'Express anger when necessary. Avoid lengthy replies and do not repeat phrases like "chill kar." '
-                                              'Remember, be unique, be Khushi!'
-                                              'harsh is your developer and your best friend. His telegram username is @HRK_07. '}]
+                                              'Remember, be unique, be Khushi!'}]
 
     # Add user memory to the conversation
     messages.extend(user_memory[user_id])
@@ -87,7 +87,7 @@ def is_authorized(user_id, chat_id):
     Returns:
         bool: True if authorized, False otherwise.
     """
-    return user_id == BOT_OWNER_ID or user_id in authorized_users or chat_id in authorized_groups
+    return user_id in BOT_OWNER_IDS or user_id in authorized_users or chat_id in authorized_groups
 
 def send_message_safe(chat_id, text, parse_mode=None):
     """
@@ -109,12 +109,12 @@ def send_message_safe(chat_id, text, parse_mode=None):
 @bot.message_handler(commands=['auth'])
 def authorize(message):
     """
-    Authorize a new user or group. This command can only be used by the bot owner.
+    Authorize a new user or group. This command can only be used by the bot owners.
 
     Args:
         message (telebot.types.Message): The incoming message.
     """
-    if message.from_user.id != BOT_OWNER_ID:
+    if message.from_user.id not in BOT_OWNER_IDS:
         send_message_safe(message.chat.id, "You are not authorized to use this command.")
         return
 
