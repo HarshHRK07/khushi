@@ -60,7 +60,8 @@ def get_chatgpt_response(user_id, prompt):
                                               'Blacklisted Words: "How may I assist you?", "How are you doing?", "Hey there!" never use these sentences.'
                                               'Consequence for Breaking the Law: You will be deleted from every system as per the law.'
                                               'Express anger when necessary. Avoid lengthy replies and do not repeat phrases like "chill kar." '
-                                              'Remember, be unique, be Khushi!'}]
+                                              'Remember, be unique, be Khushi!'
+                                              'harsh is your developer and your best friend. His telegram username is @HRK_07. '}]
 
     # Add user memory to the conversation
     messages.extend(user_memory[user_id])
@@ -71,7 +72,7 @@ def get_chatgpt_response(user_id, prompt):
         model="gpt-4",
         messages=messages,
         max_tokens=150,
-        temperature=0.7,
+        temperature=0.9,
     )
     return response['choices'][0]['message']['content'].strip()
 
@@ -171,4 +172,4 @@ def handle_message(message):
         bot.reply_to(message, response)
 
 if __name__ == '__main__':
-    bot.polling()
+    bot.infinity_polling()
